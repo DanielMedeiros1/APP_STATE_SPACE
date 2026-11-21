@@ -1,6 +1,8 @@
-# PROVA 3 - APP DE DANIEL MEDEIROS SOARES CARNEIRO
+# PROVA 3 - APP ESPAÇO DE ESTADOS
 
-Aplicativo Python / Streamlit de Daniel Medeiros Soares Carneiro para DCA3701, UFRN. Interface refeita a partir do projeto fornecido, seguindo o fluxo do aplicativo de LGR: dados na lateral, botão Resolver questão e resolução aberta. O núcleo matemático do ZIP original foi aproveitado e revisado; a interface e o caderno de resultados foram reconstruídos.
+Aplicativo Python / Streamlit de Daniel Medeiros Soares Carneiro para DCA3701, UFRN.
+
+Link: https://app-prova3-daniel-medeiros-soares-carneiro.streamlit.app/
 
 ## Executar no computador
 
