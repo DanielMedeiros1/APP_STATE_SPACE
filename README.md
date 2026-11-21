@@ -1,6 +1,6 @@
 # PROVA 3 - APP ESPAÇO DE ESTADOS
 
-Aplicativo Python / Streamlit de Daniel Medeiros Soares Carneiro para DCA3701, UFRN.
+Aplicativo Python / Streamlit desenvolvido por Daniel Medeiros Soares Carneiro para DCA3701, UFRN.
 
 Link: https://app-prova3-daniel-medeiros-soares-carneiro.streamlit.app/
 
@@ -12,12 +12,6 @@ Requer Python 3.10 ou superior (validado com Python 3.12).
 python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
-
-## Publicar no Streamlit Community Cloud
-
-Extraia o ZIP. Coloque `app.py`, `report.py`, `inputs.py`, `requirements.txt` e a pasta `statespace` na raiz do seu repositório. Preserve a pasta `statespace` com seus arquivos dentro dela. Não mova os arquivos internos para a raiz. A pasta `.streamlit` configura o tema claro e é opcional; `tests` contém os testes.
-
-No Streamlit, selecione a branch `main` e o arquivo principal `app.py`. Ao atualizar um repositório existente, substitua os arquivos correspondentes. O aplicativo não foi publicado automaticamente.
 
 ## Resolver e capturar
 
@@ -36,7 +30,6 @@ Se alterar dados, a resolução antiga permanece identificada até clicar novame
 
 ## Conteúdo
 
-- `LISTA4_RESOLVIDA.html` é uma cópia de referência da resolução das duas questões da Lista 4, exportada pelo mesmo módulo de relatórios do aplicativo; pode ser aberta no navegador e impressa em PDF.
 - Polinômio característico, polos e estabilidade interna.
 - Controlabilidade: B, AB, A²B etc., matriz U/Wc, determinante e posto.
 - Observabilidade: C, CA, CA² etc., matriz V/Wo, determinante e posto.
@@ -46,7 +39,6 @@ Se alterar dados, a resolução antiga permanece identificada até clicar novame
 - Seguidor contínuo de degrau, com ganho integral separado do ganho dos estados.
 - Discretização exata por $G(T)=e^{AT}$ e $H(T)=\int_0^T e^{A\tau}B\,d\tau$; para matrizes nilpotentes, mostra as potências de A, a série finita e a integral desenvolvida. Projeto de K e L diretamente no sistema discretizado.
 - Seguidor discreto de degrau, com transformação de ganhos consistente com a fórmula da apostila (seção 7.18).
-- Lista 4 / 4º Exercício da 3ª Unidade: Q1 com função de transferência, forma canônica controlável, discretização em $T=1$ s e seguidor com polos $0,5\pm0,2j$ e $-0,1$; Q2 com sistema discreto de 3ª ordem e projeto do seguidor com polos $\pm0,5\pm0,5j$.
 - Simulação opcional de saída e plano de polos; exportação CSV.
 - Exportação de resolução em HTML e Markdown/LaTeX.
 
@@ -60,17 +52,6 @@ Referência principal: capítulo 7 de `SisContr(2).pdf`, especialmente seções 
 - Seguidor contínuo: e = y − r, ξ̇ = y − r, u = k₁ξ + K₂x.
 - No seguidor discreto, o relatório apresenta a fórmula de Ackermann da folha para $K_A$, a conversão $\widehat K=-K_A$ e a transformação $[k_2\;k_1]=(\widehat K+[0\;\cdots\;0\;1])Q^{-1}$; a lei implementada é $u_k=-k_2x_k+k_1v_k$.
 
-As resoluções manuscritas orientam a apresentação. Na questão 3 da Lista 3, a discretização é desenvolvida separadamente por $G(T)=e^{AT}$ e pela integral de $H(T)$; os projetos seguem $W_c=[H\ GH\ \cdots]$, $W_o=[C;CG;\cdots]$, $K=-e_n^TW_c^{-1}q_c(G)$ e $L=q_o(G)W_o^{-1}e_n$. O exemplo carrega também a interligação com realimentação dos estados estimados. Resultados são recalculados, não copiados dos manuscritos.
-
-### Lista 4 adicionada
-
-- **Q1(a):** $G(s)=(3s-2)/(s^2+s)$, forma canônica controlável: $A=\begin{bmatrix}0&1\\0&-1\end{bmatrix}$, $B=\begin{bmatrix}0\\1\end{bmatrix}$, $C=[-2\;3]$, $D=0$.
-- **Q1(b):** com $T=1$ s, $G=\begin{bmatrix}1&1-e^{-1}\\0&e^{-1}\end{bmatrix}$ e $H=\begin{bmatrix}e^{-1}\\1-e^{-1}\end{bmatrix}$, calculados pelas duas fórmulas de discretização impressas na folha.
-- **Q1(c):** o polinômio desejado é $z^3-0,9z^2+0,19z+0,029$. Na lei do app $u_k=-k_2x_k+k_1v_k$, $k_2\approx[2,15757803\;1,52977190]$ e $k_1\approx-0,25232528$.
-- **Correção da seleção da Q1:** o módulo “Seguidor de degrau” é detectado sem diferenciar maiúsculas/minúsculas; ao carregar A4 · Q1, o campo “Polos do seguidor (n + 1)” recebe `0.5+0.2j; 0.5-0.2j; -0.1`, e os campos de polos para K e L não são solicitados.
-- **Q2:** a alocação é possível. O polinômio desejado é $z^4+0,25$; $\det(Q)=-12$. Os ganhos na convenção $u_k=-k_2x_k+k_1v_k$ são $k_2=[263/192\;667/384\;91/64]$ e $k_1=5/48$.
-
-As resoluções da Lista 4 são recalculadas a partir dos dados do PDF. A apresentação da forma canônica controlável segue a tabela da folha; a discretização usa $G(T)=e^{AT}$ e $H(T)=\int_0^T e^{A\tau}B\,d\tau$; e o seguidor discreto usa a matriz aumentada e a transformação para $[k_2\;k_1]$. Por exemplo, o sistema 2 da primeira lista tem polinômio s³ − 8s² − 28s + 207; o seguidor da segunda lista tem coeficiente 137,17 no termo de primeiro grau.
 
 ## Limites
 
